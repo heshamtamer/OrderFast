@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json()); // No need for bodyParser.json()
 
 // Routes
+app.get('/', (req, res) => {
+    res.send('Hello, World!'); // This will respond to GET /
+});
 app.use("/api/orders", require("./routes/orderRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
