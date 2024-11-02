@@ -7,10 +7,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import './Orders.css'; // Import the CSS file
+import './Orders.css';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
+    const [itemQuantities, setItemQuantities] = useState({});
 
     useEffect(() => {
         const fetchOrders = async () => {
@@ -22,6 +23,20 @@ const Orders = () => {
                     },
                 });
                 setOrders(response.data);
+
+                // Calculate total quantity for each item
+                const quantities = {};
+                response.data.forEach(order => {
+                    order.items.forEach(item => {
+                        if (quantities[item.name]) {
+                            quantities[item.name] += item.quantity;
+                        } else {
+                            quantities[item.name] = item.quantity;
+                        }
+                    });
+                });
+                setItemQuantities(quantities);
+
             } catch (error) {
                 console.error("Error fetching orders:", error);
             }
@@ -37,7 +52,7 @@ const Orders = () => {
                 <div className="underline"></div>
             </div>
             <TableContainer component={Paper} className="table-container">
-                <Table sx={{ minWidth: 600 }} aria-label="orders table">
+                <Table sx={{ minWidth: 650 }} aria-label="orders table">
                     <TableHead>
                         <TableRow>
                             <TableCell className="table-head-cell">Customer Name</TableCell>
@@ -67,8 +82,28 @@ const Orders = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+
+            {/* Summary Table for Item Totals */}
+            <TableContainer component={Paper} className="table-container summary-table">
+                <Table sx={{ minWidth: 400 }} aria-label="summary table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell className="table-head-cell">Item Name</TableCell>
+                            <TableCell align="center" className="table-head-cell">Total Quantity</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {Object.entries(itemQuantities).map(([itemName, quantity]) => (
+                            <TableRow key={itemName}>
+                                <TableCell component="th" scope="row" className="table-cell">{itemName}</TableCell>
+                                <TableCell align="center" className="table-cell">{quantity}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </div>
     );
-}
+};
 
 export default Orders;

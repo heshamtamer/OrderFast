@@ -46,26 +46,39 @@
     height: 80px;
     background: #eaeaea;
     border-radius: 6px;
+    padding: 0 10px; /* Added padding for input alignment */
 }
 
-
-
-/* .input input {
+.select-input, .custom-input {
+    width: 60%; /* Controls the width of the dropdown and custom input field */
     height: 50px;
-    width: 400px;
     background: transparent;
     border: none;
     outline: none;
-    color: #797979;
     font-size: 19px;
-} */
+    color: #797979;
+}
 
+.select-input {
+    color: #3c009d; /* Match color with theme */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+}
 
-/* .submit-container {
-    display: flex;
-    gap: 30px;
-    margin: 30px auto 10px;
-} */
+.custom-input {
+    display: block;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.select-input option {
+    color: #000; /* Ensures dropdown options are visible */
+    background: #fff;
+}
 
 .submit {
     display: flex;
@@ -86,8 +99,6 @@
     background: #3c009d;
 }
 
-
-/* New action button styling */
 .action-button {
     width: 300px;
     height: 50px;
@@ -99,12 +110,11 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 0 auto; /* Centers the button horizontally */
-    display: block; /* Ensures button is treated as a block element */
-    text-align: center; /* Centers the text inside the button */
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
-/* Hover and active effects for button */
 .action-button:hover {
     background-color: #4c00b4;
     transform: translateY(-2px);
@@ -113,4 +123,26 @@
 .action-button:active {
     background-color: #35007f;
     transform: translateY(0);
+}
+
+/* Adjust Remove button styling to match other elements */
+.submit-container {
+    display: flex;
+    gap: 10px;
+}
+
+.remove-button {
+    width: 100px;
+    height: 59px;
+    color: #fff;
+    background: #c41a1a;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.remove-button:hover {
+    background: #a31717;
 }
