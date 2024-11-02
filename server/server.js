@@ -22,4 +22,4 @@ app.use("/api/orders", require("./routes/orderRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
 // Start server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT,'0.0.0.0', () => console.log(`Server running on port ${PORT}`));
