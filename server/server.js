@@ -7,6 +7,7 @@ const cron = require("node-cron");
 const bodyParser = require("body-parser");
 const Order = require("./models/Order"); // Import Order model
 
+
 // Connect to the database
 connectDb();
 
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 });
 app.use("/api/orders", require("./routes/orderRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/clear", require("./routes/clearRoutes"));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
