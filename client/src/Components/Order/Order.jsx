@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Order.css";
 
-const commonItems = ["طعمية", "فول", "صوابع", "شيبسى", "فول بيض", "بطاطس بابا"]; // Add common items here
+const commonItems = ["طعمية", "فول", "صوابع", "شيبسى", "فول بيض", "بطاطس بابا"];
 
 const Order = () => {
-    const [items, setItems] = useState([{ name: "", quantity: 1, custom: false }]);
+    const [items, setItems] = useState([{ name: "", quantity: 1, custom: false, customName: "" }]);
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
@@ -15,17 +15,21 @@ const Order = () => {
         const { name, value } = event.target;
 
         if (name === "name") {
-            values[index].name = value;
+            // If 'custom' is selected, enable custom input
             values[index].custom = value === "custom";
+            values[index].name = value === "custom" ? "" : value; // Clear name if custom is chosen
+        } else if (name === "customName") {
+            // Update custom name field
+            values[index].customName = value;
         } else {
             values[index][name] = value;
         }
-        
+
         setItems(values);
     };
 
     const handleAddItem = () => {
-        setItems([...items, { name: "", quantity: 1, custom: false }]);
+        setItems([...items, { name: "", quantity: 1, custom: false, customName: "" }]);
     };
 
     const handleRemoveItem = (index) => {
@@ -38,10 +42,16 @@ const Order = () => {
         event.preventDefault();
         const accessToken = localStorage.getItem("accessToken");
 
+        // Prepare items, setting custom items' name to customName value
+        const preparedItems = items.map(item => ({
+            name: item.custom ? item.customName : item.name,
+            quantity: item.quantity,
+        }));
+
         try {
             await axios.post(
                 `${process.env.REACT_APP_API_URL}/orders`,
-                { items },
+                { items: preparedItems },
                 {
                     headers: {
                         "Content-Type": "application/json",
@@ -49,8 +59,8 @@ const Order = () => {
                     },
                 }
             );
-            setMessage("Order created successfully!");
-            setItems([{ name: "", quantity: 1, custom: false }]); // Reset the form
+            setMessage("الف هنا يا كبييير");
+            setItems([{ name: "", quantity: 1, custom: false, customName: "" }]); // Reset the form
         } catch (error) {
             setMessage(error.response ? error.response.data.message : "An error occurred");
         }
@@ -84,9 +94,9 @@ const Order = () => {
                         {item.custom && (
                             <input
                                 type="text"
-                                name="name"
+                                name="customName"
                                 placeholder="Enter custom item"
-                                value={item.name}
+                                value={item.customName}
                                 onChange={(event) => handleInputChange(index, event)}
                                 required
                             />
@@ -100,7 +110,7 @@ const Order = () => {
                             required
                         />
                         <button
-                            className="submit"
+                            className="action-button"
                             type="button"
                             onClick={() => handleRemoveItem(index)}
                         >

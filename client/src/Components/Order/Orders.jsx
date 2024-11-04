@@ -45,6 +45,10 @@ const Orders = () => {
         fetchOrders();
     }, []);
 
+    const handleCall = () => {
+        window.location.href = 'tel:01001844699';
+    };
+
     return (
         <div className="container">
             <div className="header">
@@ -102,6 +106,9 @@ const Orders = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+
+            {/* Call Button */}
+            <button className="call-button" onClick={handleCall}>Call الاندلس</button>
         </div>
     );
 };
