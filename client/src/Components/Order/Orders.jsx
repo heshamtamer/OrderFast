@@ -46,7 +46,7 @@ const Orders = () => {
     }, []);
 
     const handleCall = () => {
-        window.location.href = 'tel:01001844699';
+        window.location.href = 'tel:01151371200';
     };
 
     return (
