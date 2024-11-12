@@ -45,8 +45,12 @@ const Orders = () => {
         fetchOrders();
     }, []);
 
-    const handleCall = () => {
+    const handleCallAndalos = () => {
         window.location.href = 'tel:01151371200';
+    };
+
+    const handleCallRosto = () => {
+        window.location.href = 'tel:01200001100'; 
     };
 
     return (
@@ -107,8 +111,11 @@ const Orders = () => {
                 </Table>
             </TableContainer>
 
-            {/* Call Button */}
-            <button className="call-button" onClick={handleCall}>Call الاندلس</button>
+            {/* Call Buttons */}
+            <div className="button-container">
+                <button className="call-button" onClick={handleCallAndalos}>Call الاندلس</button>
+                <button className="call-button" onClick={handleCallRosto}>Call Rosto</button>
+            </div>
         </div>
     );
 };

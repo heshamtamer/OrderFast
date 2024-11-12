@@ -1,7 +1,13 @@
-.call-button {
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
+}
+
+.call-button {
     width: 100%;
-    max-width: 300px;
+    max-width: 200px; /* Reduced max-width for side-by-side alignment */
     height: 50px;
     color: #fff;
     background-color: #3c009d;
@@ -11,10 +17,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .call-button:hover {

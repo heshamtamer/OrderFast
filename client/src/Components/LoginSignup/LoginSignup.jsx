@@ -12,7 +12,6 @@ const LoginSignup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
@@ -22,7 +21,6 @@ const LoginSignup = () => {
         username,
         email,
         password,
-        role,
       });
       setMessage("Registration successful!");
     } catch (error) {
@@ -85,17 +83,6 @@ const LoginSignup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        {action === "Sign Up" && (
-          <div className="input">
-            <img src={user_icon} alt="" />
-            <input
-              type="text"
-              placeholder="Role"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-            />
-          </div>
-        )}
       </div>
       {action === "Login" && (
         <div className="forgot-password">
