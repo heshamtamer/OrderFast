@@ -1,4 +1,4 @@
-# Order Breakfast
+# OrderFast
 
 A simple web application built with **React, Node.js, and MongoDB** that allows customers to place breakfast orders and enables admins to manage orders efficiently. The application also provides a direct call feature for contacting the restaurant.
 
