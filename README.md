@@ -31,19 +31,19 @@ A simple web application built with **React, Node.js, and MongoDB** that allows 
 
 ## Screenshots
 
-### Customer Order Page
-![Customer Order Page](https://github.com/user-attachments/assets/97ca08b3-1f5c-4399-8127-d94379f08815)
+### Login Page
+![Login Page](https://github.com/user-attachments/assets/ff9e399b-336c-4aee-83d4-03588dc94709)
 
-### Admin Dashboard
-![Admin Dashboard](https://github.com/user-attachments/assets/8012409b-76a4-4ead-a990-60f941a0f37a)
+### Create Order Page
+![Order](https://github.com/user-attachments/assets/3dfa2672-dec3-44b3-8933-020cedeb2527)
+
+### Orders Page
+![Orders](https://github.com/user-attachments/assets/1cdd0029-17c3-45d6-b941-1104c12cb47d)
 
 ## Deployment
 The project is deployed on **Vercel**:
 - **Frontend:** [Order Fast Client](https://order-fast-client.vercel.app/)
 - **Backend:** [Order Fast Server](https://order-fast-server.vercel.app/)
-
-## Contributing
-Feel free to contribute by submitting pull requests!
 
 ---
 
