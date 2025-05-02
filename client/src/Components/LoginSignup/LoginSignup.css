@@ -1,132 +1,326 @@
-.container {
-    display: flex;
+/* Modern Food Ordering Login/Signup Style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Left Panel - Food Image & Logo */
+.left-panel {
+  flex: 1;
+  background-color: #111;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.logo-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.food-image-container {
+  width: 100%;
+  height: 60%;
+  background-image: url('../Assets/LogoFinal.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+/* Right Panel - Login Form */
+.right-panel {
+  flex: 0.8;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.2rem;
+}
+
+.auth-form h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff5722;
+  box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.8rem;
+}
+
+.password-toggle:hover {
+  color: #ff5722;
+}
+
+.forgot-password-link {
+  text-align: right;
+  margin-bottom: 1.2rem;
+  font-size: 0.8rem;
+}
+
+.forgot-password-link span {
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.forgot-password-link span:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 1.2rem;
+}
+
+.submit-button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.message:empty {
+  display: none;
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.auth-switch span {
+  color: #ff5722;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.auth-switch span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .login-container {
     flex-direction: column;
-    margin: auto;
-    margin-top: 200px;
-    width: 600px;
-    background: white;
-    padding-bottom: 30px;
+    min-height: 100vh;
+  }
+  
+  .left-panel {
+    flex: 0.3;
+    padding: 1rem;
+  }
+  
+  .right-panel {
+    flex: 0.7;
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 2.8rem;
+  }
+
+  .food-image-container {
+    height: 40%;
+  }
+
+  .auth-form {
+    padding: 1rem;
+  }
+
+  .auth-form h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 9px;
-    width: 100%;
-    margin-top: 30px;
+@media (max-width: 768px) {
+  .left-panel {
+    flex: 0.25;
+    padding: 0.8rem;
+  }
+  
+  .right-panel {
+    flex: 0.75;
+    padding: 0.8rem;
+  }
+  
+  .logo {
+    font-size: 2.4rem;
+  }
+
+  .food-image-container {
+    height: 35%;
+  }
+
+  .auth-form {
+    max-width: 100%;
+  }
+
+  .auth-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .submit-button {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
 }
 
-.text {
-    font-size: 48px;
-    font-weight: 700;
-    color: #3c009d;
-}
+@media (max-width: 480px) {
+  .left-panel {
+    flex: 0.2;
+    padding: 0.5rem;
+  }
+  
+  .right-panel {
+    flex: 0.8;
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
 
-.underline {
-    width: 61px;
-    height: 6px;
-    background: #3c009d;
-    border-radius: 9px;
-}
+  .food-image-container {
+    height: 30%;
+  }
 
-.inputs {
-    margin-top: 55px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
+  .auth-form {
+    padding: 0.8rem;
+  }
 
-.input {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 480px;
-    height: 80px;
-    background: #eaeaea;
-    border-radius: 6px;
-}
+  .auth-form h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
 
-.input img {
-    margin: 0px 30px;
-}
+  .form-group label {
+    font-size: 0.85rem;
+  }
 
-.input input {
-    height: 50px;
-    width: 400px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #797979;
-    font-size: 19px;
-}
+  .form-group input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 
-.forgot-password {
-    padding-left: 62px;
-    margin-top: 27px;
-    font-size: 18px;
-    color: #797979;
-}
+  .submit-button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 
-.forgot-password span {
-    color: #4c00b4;
-    cursor: pointer;
-}
+  .auth-switch {
+    font-size: 0.85rem;
+  }
 
-.submit-container {
-    display: flex;
-    gap: 30px;
-    margin: 30px auto 10px;
-}
-
-.submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 220px;
-    height: 59px;
-    color: #fff;
-    background: #4c00b4;
-    border-radius: 50px;
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.submit:hover {
-    background: #3c009d;
-}
-
-.gray {
-    background: #eaeaea;
-    color: #676767;
-}
-
-/* New action button styling */
-.action-button {
-    width: 300px;
-    height: 50px;
-    color: white;
-    background-color: #3c009d;
-    border: none;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 0 auto; /* Centers the button horizontally */
-    display: block; /* Ensures button is treated as a block element */
-    text-align: center; /* Centers the text inside the button */
-}
-
-/* Hover and active effects for button */
-.action-button:hover {
-    background-color: #4c00b4;
-    transform: translateY(-2px);
-}
-
-.action-button:active {
-    background-color: #35007f;
-    transform: translateY(0);
+  .forgot-password-link {
+    font-size: 0.75rem;
+  }
 }
