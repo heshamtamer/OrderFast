@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./LoginSignup.css";
+import SEOHead from "../SEO/SEOHead";
 
 const LoginSignup = () => {
   const [action, setAction] = useState("Login");
@@ -52,6 +53,12 @@ const LoginSignup = () => {
 
   return (
     <div className="login-container">
+      <SEOHead 
+        title="OrderFast - Login & Signup | طلب طعام سريع"
+        description="Join OrderFast to start ordering delicious food online. Quick registration and login to access our fast food ordering platform with طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا and more."
+        keywords="OrderFast login, OrderFast signup, food ordering account, طلب طعام, register for food delivery, login to order food, food ordering platform"
+        url="https://orderfast.com/"
+      />
       <div className="left-panel">
         <div className="logo-container">
           <h1 className="logo">OrderFast</h1>

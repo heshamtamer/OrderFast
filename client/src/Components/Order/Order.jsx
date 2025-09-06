@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Order.css";
+import SEOHead from "../SEO/SEOHead";
 
 // Icons can be imported from your Assets folder
 import addIcon from "../Assets/add-icon.png";
@@ -73,8 +74,59 @@ const Order = () => {
         navigate("/Orders");
     };
 
+    // Add structured data for the order page
+    useEffect(() => {
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Order Food Online - OrderFast",
+            "description": "Place your food order quickly and easily. Order طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا and more delicious items.",
+            "url": "https://orderfast.com/order",
+            "mainEntity": {
+                "@type": "Service",
+                "name": "Food Ordering Service",
+                "description": "Fast and convenient food ordering platform",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "OrderFast"
+                },
+                "serviceType": "Food Delivery",
+                "areaServed": "Worldwide",
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "https://orderfast.com/order"
+                }
+            }
+        };
+
+        // Remove existing structured data script if any
+        const existingScript = document.querySelector('script[type="application/ld+json"]');
+        if (existingScript) {
+            existingScript.remove();
+        }
+
+        // Add new structured data
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+
+        return () => {
+            // Cleanup on unmount
+            if (script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
+        };
+    }, []);
+
     return (
         <div className="order-page">
+            <SEOHead 
+                title="Order Food Online - OrderFast | طلب طعام أونلاين"
+                description="Place your food order quickly and easily. Order طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا and more delicious items from OrderFast."
+                keywords="order food online, طلب طعام أونلاين, food ordering, طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا, online food delivery, place order"
+                url="https://orderfast.com/order"
+            />
             <div className="page-header">
                 <div className="logo-container">
                     <h1 className="logo">OrderFast</h1>

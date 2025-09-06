@@ -9,6 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import './Orders.css';
+import SEOHead from '../SEO/SEOHead';
 
 // Icons can be imported from your Assets folder
 import phoneIcon from "../Assets/phone-icon.png";
@@ -71,6 +72,12 @@ const Orders = () => {
 
     return (
         <div className="orders-page">
+            <SEOHead 
+                title="Order History & Summary - OrderFast | تاريخ الطلبات"
+                description="View your order history and summary at OrderFast. Track all your food orders including طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا and more."
+                keywords="order history, order summary, طلب طعام, food order tracking, order management, OrderFast orders, food delivery history"
+                url="https://orderfast.com/orders"
+            />
             <div className="page-header">
                 <div className="logo-container">
                     <h1 className="logo">OrderFast</h1>
