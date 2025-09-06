@@ -14,7 +14,7 @@ Allow: /order
 Allow: /orders
 
 # Sitemap location
-Sitemap: https://orderfast.com/sitemap.xml
+Sitemap: https://order-fast-client.vercel.app/sitemap.xml
 
 # Crawl delay (optional - be respectful to server)
 Crawl-delay: 1

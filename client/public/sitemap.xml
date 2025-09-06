@@ -6,7 +6,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://orderfast.com/</loc>
+    <loc>https://order-fast-client.vercel.app/</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
   
   <!-- Login/Signup Page -->
   <url>
-    <loc>https://orderfast.com/</loc>
+    <loc>https://order-fast-client.vercel.app/</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
   
   <!-- Order Page -->
   <url>
-    <loc>https://orderfast.com/order</loc>
+    <loc>https://order-fast-client.vercel.app/order</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
   
   <!-- Orders History Page -->
   <url>
-    <loc>https://orderfast.com/orders</loc>
+    <loc>https://order-fast-client.vercel.app/orders</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
