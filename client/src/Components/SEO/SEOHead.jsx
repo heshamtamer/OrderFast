@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const SEOHead = ({ 
   title = "OrderFast - Fast Food Ordering System | طلب طعام سريع",
   description = "OrderFast is a fast and convenient food ordering platform. Order طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا and more. Quick, easy, and delicious food delivery system.",
-  keywords = "food ordering, طلب طعام, fast food, طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا, online food delivery, food order system, restaurant ordering, hungry, order food online",
+  keywords = "food ordering, طلب طعام, fast food, طعمية, فول, صوابع, شيبسى, فول بيض, بطاطس بابا, online food delivery, food order system, restaurant ordering, hungry, order food online, order system for students, hesham tamer, order fast, order fast for students, order fast for hesham tamer",
   image = "/logo512.png",
   url = "https://order-fast-client.vercel.app",
   type = "website"
