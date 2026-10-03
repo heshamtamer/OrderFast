@@ -15,7 +15,7 @@ const LoginSignup = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, {
+        await axios.post(`${process.env.REACT_APP_API_URL}/users/register`, {
         username,
         email,
         password,
