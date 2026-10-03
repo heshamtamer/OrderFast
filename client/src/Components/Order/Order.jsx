@@ -4,10 +4,7 @@ import axios from "axios";
 import "./Order.css";
 import SEOHead from "../SEO/SEOHead";
 
-// Icons can be imported from your Assets folder
-import addIcon from "../Assets/add-icon.png";
-import removeIcon from "../Assets/remove-icon.png";
-import viewIcon from "../Assets/view-icon.png";
+
 
 const commonItems = ["طعمية", "فول", "صوابع", "شيبسى", "فول بيض", "بطاطس بابا"];
 

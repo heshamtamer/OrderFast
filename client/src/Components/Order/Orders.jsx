@@ -11,9 +11,7 @@ import Paper from '@mui/material/Paper';
 import './Orders.css';
 import SEOHead from '../SEO/SEOHead';
 
-// Icons can be imported from your Assets folder
-import phoneIcon from "../Assets/phone-icon.png";
-import backIcon from "../Assets/back-icon.png";
+
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 
 const SEOHead = ({ 
   title = "OrderFast - Fast Food Ordering System | طلب طعام سريع",
